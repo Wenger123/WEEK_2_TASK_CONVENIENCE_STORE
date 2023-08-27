@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="170e2ae6-dd2f-4333-9e93-e73907acb6b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/francis/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="170e2ae6-dd2f-4333-9e93-e73907acb6b7" name="Changes" comment="Second task" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,11 +88,24 @@
       <option name="presentableId" value="Default" />
       <updated>1693145793359</updated>
       <workItem from="1693145794461" duration="6647000" />
-      <workItem from="1693160425797" duration="9633000" />
+      <workItem from="1693160425797" duration="10234000" />
     </task>
+    <task id="LOCAL-00001" summary="Second task">
+      <option name="closed" value="true" />
+      <created>1693176898752</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693176898752</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Second task" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second task" />
   </component>
 </project>
