@@ -15,6 +15,11 @@ abstract class Staff {
         this.address = address;
         this.salary = salary;
     }
+
+    public Staff() {
+
+    }
+
     public String getName() {
         return name;
     }

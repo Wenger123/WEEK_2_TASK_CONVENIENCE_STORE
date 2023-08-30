@@ -6,11 +6,16 @@ import com.francis.entities.Product;
 import com.francis.services.ENUM.PRODUCT_CATEGORY;
 import com.francis.services.ManagerServices;
 
+import java.io.*;
+import java.util.HashMap;
 import java.util.Map;
 
 import static com.francis.entities.ConvenienceStore.*;
 
 public class ManagerImplementation implements ManagerServices {
+    private static Map<String, Cashier> cashiers = new HashMap<>();
+
+
 
     @Override
     public boolean hireCashier(String name, int age, String email, int id, String address, double salary) {
@@ -74,6 +79,52 @@ public class ManagerImplementation implements ManagerServices {
         else
             System.out.println("Product not found in our product list");
 
+    }
+    @Override
+    public boolean addCashierToConvenienceStore() {
+        File file = new File("/Users/mac/IdeaProjects/WEEK_2_TASK_CONVENIENCE_STORE/src/main/resources/CashierList.csv");
+        String line = " ";
+        try {
+            BufferedReader myReader = new BufferedReader(new FileReader(file));
+            while ((line = myReader.readLine()) !=null){
+                String[] row = line.split(",");
+                if (!row[0].equalsIgnoreCase("name")){
+                    if(!row[0].equalsIgnoreCase("cashiers")){
+                        Cashier cashier = new Cashier();
+                         cashier.setName(row[0]);
+                         cashier.setAge(Integer.parseInt(row[1]));
+                         cashier.setEmail(row[2]);
+                         cashier.setId(Integer.parseInt(row[3]));
+                         cashier.setAddress(row[4]);
+                         cashier.setSalary(Integer.parseInt(row[5]));
+                         cashier.setStrike(Integer.parseInt(row[7]));
+
+                        cashiers.put(cashier.getName(), cashier);
+                    }
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found "+ e);
+        } catch (IOException e) {
+            System.out.println("error occurred "+ e);
+        }
+        return false;
+    }
+
+    public static Map<String, Cashier> getCashiers() {
+        return cashiers;
+    }
+
+    public static void setCashiers(Map<String, Cashier> cashiers) {
+        ManagerImplementation.cashiers = cashiers;
+    }
+
+    public void viewCashierList() {
+        System.out.println("Name" + "           " + "Age" + "           " + "Email" + "           " + "Id"+"             "+"Address" + "           " + "Salary" + "            " + "Uniform" + "            " + "Strike");
+        for (var items : getCashiers().values()) {
+            System.out.printf("%-15s %-8s %-19s %-13s %-19s %-17s %-19s %-12s", items.getName(), items.getAge(), items.getEmail(), items.getId(),items.getAddress(),items.getSalary(),items.getUniform(),items.getStrike());
+            System.out.println();
+        }
     }
 }
 

@@ -1,20 +1,57 @@
 package com.francis;
 
-import com.francis.entities.Cashier;
-import com.francis.entities.ConvenienceStore;
-import com.francis.entities.Customer;
-import com.francis.entities.Manager;
+import com.francis.entities.*;
 import com.francis.services.ENUM.PRODUCT_CATEGORY;
-import com.francis.services.implementation.CashierImplementation;
-import com.francis.services.implementation.CustomerImplementation;
-import com.francis.services.implementation.ManagerImplementation;
+import com.francis.services.implementation.*;
+
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+        ManagerImplementation manager1 = new ManagerImplementation();
+        manager1.addCashierToConvenienceStore();
+        manager1.viewCashierList();
+
+        ProductsImplementation productsImplementation = new ProductsImplementation();
+        productsImplementation.addProductsToConvenienceStore();
+
+
+        System.out.println(" ");
+        System.out.println(" ");
+        productsImplementation.viewItems(ProductsImplementation.getAlcoholic_drinks());
+
+
+        System.out.println(" ");
+        System.out.println(" ");
+        productsImplementation.viewItems(ProductsImplementation.getNon_Alcoholic_drinks());
+
+
+        System.out.println(" ");
+        System.out.println(" ");
+        productsImplementation.viewItems(ProductsImplementation.getCosmetics());
+
+
+        System.out.println(" ");
+        System.out.println(" ");
+        productsImplementation.viewItems(ProductsImplementation.getBeverages());
+
+
+        System.out.println(" ");
+        System.out.println(" ");
+        productsImplementation.viewItems(ProductsImplementation.getBakeries());
+
+
+        System.out.println(" ");
+        System.out.println(" ");
+        UpdateConvenienceStore.addProductToCSV("Hearken", 1000, 50, "Blue", PRODUCT_CATEGORY.ALCOHOLIC_DRINKS);
+        UpdateConvenienceStore.removeProductFromCSV("Life");
+
+
 
         Manager manager = new Manager("Manager Office","Anthony",35,"anthony",1,
                 "No Buhari Street Garki Abuja",100_000);
-        System.out.println(manager.getName() + " : " + manager.getSalary());
+         System.out.println(manager.getName() + " : " + manager.getSalary());
 
 
         ManagerImplementation implementation = new ManagerImplementation();
@@ -26,10 +63,8 @@ public class Main {
         implementation.hireCashier("Gift",25,"gift@gmail.com",4,"asokoro Abuja",50_000);
 
 
-        Cashier cashier1  = new Cashier("Cynthia",30,"cynthia@gmail.com",3,"Jabi Abuja",55_000);
-        Cashier cashier2 = new Cashier("Gift",25,"gift@gmail.com",4,"asokoro Abuja",50_000);
-
-
+           Cashier cashier1  = new Cashier("Cynthia",30,"cynthia@gmail.com",3,"Jabi Abuja",55_000);
+           Cashier cashier2 = new Cashier("Gift",25,"gift@gmail.com",4,"asokoro Abuja",50_000);
         System.out.println("  ");
         System.out.println(ConvenienceStore.getCashierList());
         System.out.println(ConvenienceStore.getCashierMap());

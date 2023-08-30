@@ -11,6 +11,11 @@ public class Cashier extends Staff{
         super(name, age, email, id, address, salary);
         this.strike = strike++;
     }
+
+    public Cashier() {
+        super();
+    }
+
     public void addToCart(List<Product> products){
         productList.addAll(products);
     }

@@ -40,7 +40,6 @@ public class CustomerImplementation implements CustomerServices {
         }
     }
 
-
     @Override
     public void buyProduct(CashierImplementation cashier) {
         System.out.println("This customer "+ "\""+customer.getName()+"\""+" has placed an order");

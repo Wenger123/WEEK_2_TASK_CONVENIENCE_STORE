@@ -10,4 +10,5 @@ public interface ManagerServices {
     public void addProduct(String productName, int price, int quantity, String productColour, PRODUCT_CATEGORY categoryName);
 
     public void removeProduct(String name);
+    public boolean addCashierToConvenienceStore();
 }
